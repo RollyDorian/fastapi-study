@@ -40,3 +40,9 @@ def update_model(model_id: int, updates: ModelUpdate):
     updated_model = model.model_copy(update=update_data)
     models[model_id] = updated_model
     return updated_model
+
+
+@router.delete("/{model_id}", status_code=204)
+def delete_model(model_id: int):
+    if models.pop(model_id, None) is None:
+        raise HTTPException(status_code=404, detail="Not found")
