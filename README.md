@@ -32,3 +32,11 @@ docker run -d --name my_fastapi_container -p 8000:8000 my_fastapy_app
 ```
 
 Записи, добавленные через API, хранятся в памяти и сбрасываются при перезапуске.
+
+
+**Просмотр логов приложения**
+
+```bash
+docker logs -f my_fastapi_container
+
+```
